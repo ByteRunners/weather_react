@@ -1,42 +1,41 @@
 import React from "react";
+import "../styles/App.css";
 
 interface WeatherCardProps {
-    temperature: number;
-    condition:string;
-    city:string;
-    time:string;
-    humidity:number;
-    windSpeed:number;
-    uvindex:number;
-    airQuality: string;
-                                                
+  temperature: number;
+  condition: string;
+  city: string;
+  time: string;
+  humidity: number;
+  windSpeed: number;
+  uvindex: number;
+  airQuality: string;
 }
 
-const WeatherCard:React.FC<WeatherCardProps> = ({
-    temperature,
-    condition,
-    city,
-    time,
-    humidity,
-    windSpeed,
-    uvindex,
-    airQuality
+const WeatherCard: React.FC<WeatherCardProps> = ({
+  temperature,
+  condition,
+  city,
+  time,
+  humidity,
+  windSpeed,
+  uvindex,
+  airQuality,
 }) => {
-    return (
-        <div className="p-6 bg-white shadow rounded-lg">
-            <div className="text-3xl font-bold">{temperature}C</div>
-            <div className="text-gray-500">{condition}</div>
-            <div className="mt-4">
-                <div>City:{city}</div>
-                <div>Time:{time}</div>
-                <div>Humidity:{humidity}%</div>
-                <div>WindSpeed:{windSpeed}km/h</div>
-                <div>Uv Index:{uvindex}</div>
-                <div>Air Quality:{airQuality}</div>
-
-            </div>
-        </div>
-    );
+  return (
+    <section className="card">
+      <div>{temperature}C</div>
+      <div>{condition}</div>
+      <div>
+        <div>City:{city}</div>
+        <div>Time:{time}</div>
+        <div>Humidity:{humidity}%</div>
+        <div>WindSpeed:{windSpeed}km/h</div>
+        <div>Uv Index:{uvindex}</div>
+        <div>Air Quality:{airQuality}</div>
+      </div>
+    </section>
+  );
 };
 
 export default WeatherCard;
