@@ -1,35 +1,59 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './styles/App.css';
+import './components/WeatherCard';
+import WeatherCard from './components/WeatherCard';
+import { FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faBars, faBell} from '@fortawesome/free-solid-svg-icons';
 
-function App() {
-  const [count, setCount] = useState(0)
+function App(){
+  const currentWeather = {
+
+    temperature:12,
+    condition:'Mostly Cloudy',
+    city:'Sanaa, Yemen',
+    time: '8:00',
+    humidity:12,
+    windSpeed:7.7,
+    uvindex:5,
+    airQuality: 'Unhealthy'
+
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div style={{
+      backgroundColor:'rgb(45, 47, 49)',
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+    }}>
+    <div style={{
+      backgroundColor:'#000',
+      width: '100%',
+      height:'60%',
+      maxWidth: '1000px',
+      padding: '100px',
+      borderRadius: '35px',
+      boxShadow: '0 4px 10px rgba(0,0,0.3)',
+    }}>
+      <div style={{
+      display:'flex',
+      justifyContent:'space-between',
+      maxWidth: '1000px',
+      alignItems:'center',
+      position:'absolute',
+      top: '-20px',
+      left:'0',
+      width:'100%',
+      padding:'0 20px'
+    }}>
+      
+    </div>
+      <WeatherCard{...currentWeather}/>
+    </div>
+    </div>
+  );
+  
 }
 
-export default App
+export default App;
