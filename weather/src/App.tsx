@@ -1,5 +1,4 @@
 import "./styles/App.css";
-import "./components/WeatherCard";
 import WeatherCard from "./components/WeatherCard";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faBell } from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +17,16 @@ function App() {
 
   return (
     <main className="container">
-      <WeatherCard />
+      <WeatherCard 
+        temperature={currentWeather.temperature}
+        condition={currentWeather.condition}
+        city={currentWeather.city}
+        time={currentWeather.time}
+        humidity={currentWeather.humidity}
+        windSpeed={currentWeather.windSpeed}
+        uvindex={currentWeather.uvindex}
+        airQuality={currentWeather.airQuality}
+      />
     </main>
   );
 }
