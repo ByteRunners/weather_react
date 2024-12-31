@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "../styles/App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons"; 
 
 
 interface WeatherCardProps {
@@ -29,6 +30,14 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };
+  // const [currentDate, setCurrentDate] = useState<string>("");
+  const currentDate = new Date().toLocaleDateString("en-YE", {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
   return (
     <section className="card">
       <div className="search-container">
@@ -46,7 +55,26 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           </span>
         ))}
       </div>
-      <div>{temperature}°C</div>
+        <div className="temperature">
+        </div>
+        <div className="temperature-options">
+          <span className="degree-toggle">°C</span> | <span className="degree-toggle">°F</span>
+        </div>
+        <div className="profile-circle">
+          <img src="\src\assets\f.jpg" alt="Profile" className="profile-image" />
+        </div>
+        <div className="sun-image">
+        <img src="\src\assets\1.png" alt="sun " className="sun-image" />
+        </div>
+        <div className="temp">
+        {temperature}°C
+      </div>
+      <div className="date-time">
+        {currentDate}
+      </div>
+      
+
+      {/* <div>{temperature}°C</div>
       <div>{condition}</div>
       <div>
         <div>City: {city}</div>
@@ -55,7 +83,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
         <div>Wind Speed: {windSpeed} km/h</div>
         <div>UV Index: {uvindex}</div>
         <div>Air Quality: {airQuality}</div>
-      </div>
+      </div> */}
     </section>
   );
 };
