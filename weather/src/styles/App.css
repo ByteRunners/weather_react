@@ -82,8 +82,6 @@ body {
   border-bottom: 2px solid rgb(0, 0, 255);
 }
 
-
-
 .temperature {
   font-size: 30px;
   font-weight: bold;
@@ -96,7 +94,6 @@ body {
   cursor: pointer;
   position: absolute;
   right: 22%;
-  
 }
 
 .degree-toggle:hover {
@@ -119,22 +116,22 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 50%; 
+  border-radius: 50%;
 }
 .card div {
   margin-bottom: 10px;
 }
 
 .sun-image {
-  width: 250px;       
-  height: 250px; 
+  width: 250px;
+  height: 250px;
   margin-right: 130px;
   margin-top: 50px;
   position: absolute;
   top: 10%;
   right: 50%;
 }
-.temp{
+.temp {
   font-size: 80px;
   margin-right: 500px;
   margin-top: 50px;
@@ -152,4 +149,57 @@ body {
   top: 45%;
   right: 50%;
   font-weight: bold;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #c9c3c3;
+  margin: 475px 5px; /* Adjust the margin around the line */
+  width: 300px; /* Control the length here */
+}
+
+.weather-condition {
+  font-size: 14px;
+  margin-right: 550px;
+  position: absolute;
+  top: 68%;
+  right: 50%;
+}
+.weather-icon {
+  font-size: 15px;
+  margin-right: 10px;
+}
+
+.week-weather {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 130px;
+  margin-top: 30px;
+}
+
+.week-day {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #214c726e;
+  border-radius: 20px;
+}
+
+.week-day-name {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.weather-icon {
+  font-size: 20px;
+  color: #7e8fc5d2;
+}
+.weather-icons {
+  font-size: 20px;
+  color: #fefeffd2;
+}
+.week-day-temp {
+  font-size: 14px;
+  color: #000000;
 }

@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "../styles/App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { faUserCircle } from "@fortawesome/free-solid-svg-icons"; 
+import { faSearch, faCloud, faCloudRain, faSun } from "@fortawesome/free-solid-svg-icons";
+import WeekWeather from "./WeekWeather";
+
 
 
 interface WeatherCardProps {
@@ -38,6 +39,15 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
     day: "numeric",
   });
 
+  const weekData = [
+    { day: "Mon", icon: faSun, temperature: 15 },
+    { day: "Tue", icon: faCloud, temperature: 17 },
+    { day: "Wed", icon: faCloudRain, temperature: 14 },
+    { day: "Thu", icon: faSun, temperature: 18 },
+    { day: "Fri", icon: faCloud, temperature: 16 },
+    { day: "Sat", icon: faCloudRain, temperature: 13 },
+    { day: "Sun", icon: faSun, temperature: 19 },
+  ];
   return (
     <section className="card">
       <div className="search-container">
@@ -55,6 +65,15 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
           </span>
         ))}
       </div>
+
+      {selectedOption === "Today" && (
+        <div className="temperature-wrapper">
+          <div className="temperature"></div>
+        </div>
+      )}
+
+      {selectedOption === "Week" && <WeekWeather weekData={weekData} />}
+
         <div className="temperature">
         </div>
         <div className="temperature-options">
@@ -72,6 +91,22 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       <div className="date-time">
         {currentDate}
       </div>
+      <hr className="divider" />
+      <div className="weather-condition-wrapper">
+        <div className="weather-condition">
+          <div className="condition-item">
+            <FontAwesomeIcon icon={faCloud} className="weather-icon" />
+            <span className="condition-text">Mostly Cloudy</span>
+          </div>
+          <div className="condition-item">
+            <FontAwesomeIcon icon={faCloudRain} className="weather-icon" />
+            <span className="condition-text">Rain -30%</span>
+          </div>
+        </div>
+      </div>
+      
+
+
       
 
       {/* <div>{temperature}°C</div>
