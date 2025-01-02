@@ -64,13 +64,15 @@ body {
   margin-left: 310px;
   position: absolute;
   top: 10%;
-  right: 50%;
+  right: 45%;
 }
 
 .option {
   cursor: pointer;
   padding: 15px;
   transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent; /* Default state */
+
 }
 
 .option:hover {
@@ -123,18 +125,18 @@ body {
 }
 
 .sun-image {
-  width: 250px;
-  height: 250px;
-  margin-right: 130px;
-  margin-top: 50px;
+  width: 200px;
+  height: 200px;
+  margin-right: 80px;
+  margin-top: 20px;
   position: absolute;
   top: 10%;
   right: 50%;
 }
 .temp {
-  font-size: 80px;
-  margin-right: 500px;
-  margin-top: 50px;
+  font-size: 70px;
+  margin-right: 300px;
+  margin-top: 40px;
   position: absolute;
   top: 45%;
   right: 50%;
@@ -143,38 +145,38 @@ body {
   text-decoration: underline;
 }
 .date-time {
-  margin-right: 470px;
-  margin-top: 150px;
+  font-size: 14px;
+  margin-right: 310px;
+  margin-top: 140px;
   position: absolute;
-  top: 45%;
+  top: 47%;
   right: 50%;
-  font-weight: bold;
 }
 
 .divider {
-  border: none;
-  border-top: 1px solid #c9c3c3;
-  margin: 475px 5px; /* Adjust the margin around the line */
-  width: 300px; /* Control the length here */
+  border-top: 1px solid #25385e;
+  margin: 330px 3px; 
+  width: 230px; 
 }
 
 .weather-condition {
   font-size: 14px;
-  margin-right: 550px;
+  margin-right: 350px;
   position: absolute;
-  top: 68%;
+  top: 75%;
   right: 50%;
 }
 .weather-icon {
-  font-size: 15px;
+  font-size: 14px;
   margin-right: 10px;
 }
 
 .week-weather {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 130px;
-  margin-top: 30px;
+  gap: 10px;
+  padding-left: 300px;
+  margin-top: 40px;
 }
 
 .week-day {
@@ -197,9 +199,31 @@ body {
 }
 .weather-icons {
   font-size: 20px;
-  color: #fefeffd2;
+  color: #ffffffd2;
 }
 .week-day-temp {
   font-size: 14px;
   color: #000000;
+}
+
+
+.highlights {
+font-size: 14px;  
+}
+
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  justify-items: center;
+  
+}
+
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #214c726e;
+  border-radius: 20px;
 }

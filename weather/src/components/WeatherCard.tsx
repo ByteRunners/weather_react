@@ -91,7 +91,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       <div className="date-time">
         {currentDate}
       </div>
-      <hr className="divider" />
+      {/* <hr className="divider" /> */}
       <div className="weather-condition-wrapper">
         <div className="weather-condition">
           <div className="condition-item">
