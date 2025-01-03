@@ -1,8 +1,17 @@
 import React, { useState } from "react";
 import "../styles/App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSearch, faCloud, faCloudRain, faSun } from "@fortawesome/free-solid-svg-icons";
-import WeekWeather from "./WeekWeather";
+import {
+  faSearch,
+  faCloud,
+  faCloudRain,
+  faWind,
+  faTint,
+  faSun,
+  faMapMarkerAlt,
+  faClock,
+  faSmog,
+} from "@fortawesome/free-solid-svg-icons";import WeekWeather from "./WeekWeather";
 
 
 
@@ -27,7 +36,7 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
   uvindex,
   airQuality,
 }) => {
-  const [selectedOption, setSelectedOption] = useState<string>("today");
+  const [selectedOption, setSelectedOption] = useState<string>("Today");
   const handleOptionClick = (option: string) => {
     setSelectedOption(option);
   };
@@ -67,9 +76,38 @@ const WeatherCard: React.FC<WeatherCardProps> = ({
       </div>
 
       {selectedOption === "Today" && (
-        <div className="temperature-wrapper">
-          <div className="temperature"></div>
-        </div>
+        <>
+          <div className="date-time">{currentDate}</div>
+          <div className="weather-details">
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faMapMarkerAlt} className="detail-icon" />
+              <span>City: {city}</span>
+            </div>
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faClock} className="detail-icon" />
+              <span>Time: {time}</span>
+            </div>
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faTint} className="detail-icon" />
+              <span>Humidity: {humidity}%</span>
+            </div>
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faWind} className="detail-icon" />
+              <span>Wind Speed: {windSpeed} km/h</span>
+            </div>
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faSun} className="detail-icon" />
+              <span>UV Index: {uvindex}</span>
+            </div>
+            <div className="detail-item">
+              <FontAwesomeIcon icon={faSmog} className="detail-icon" />
+              <span>Air Quality: {airQuality}</span>
+            </div>
+          </div>
+          <div className="weather-image">
+            <img src="/src/assets/weather.jpg" alt="Weather Scene" className="weather-img" />
+          </div>
+        </>
       )}
 
       {selectedOption === "Week" && <WeekWeather weekData={weekData} />}
