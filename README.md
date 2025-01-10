@@ -1,6 +1,7 @@
 # Weather App
 
-A weather application built using **React**, **TypeScript**, **Tailwind CSS**, and **Vite**. This app provides users with real-time weather information, including current weather conditions, a weekly forecast, and a quick view of popular cities. The app also features dynamic weather icons that change based on the weather conditions (e.g., sunny, rainy, cloudy).
+A weather application built using **React**, **TypeScript**, **CSS**, and **Vite**. This app provides users with real-time weather information, including current weather conditions, a weekly forecast, and a quick view of popular cities. The app also features dynamic weather icons that change based on the weather conditions (e.g., sunny, rainy, cloudy).
+
 
 ## Features
 
@@ -24,4 +25,3 @@ To run this project locally, follow these steps:
 ### 1. Clone the repository:
 ```bash
 git clone https://github.com/your-username/weather-app.git
-
